@@ -1,0 +1,67 @@
+@use '../abstracts/' as *;
+
+.contact{
+    margin: 10rem 0;
+    background: $white;
+
+    &__info{
+        &__heading{
+            font-size: 2rem;
+            font-weight: 200;
+            line-height: 3rem;
+            color: $black;
+            text-transform: capitalize;
+            
+        }
+
+        &__msg{
+            margin-top: 2rem;
+            font-size: 1.5rem;
+            line-height: 2.6rem;
+            color: $silverlight;
+        }
+    }
+}
+
+/* Contact Form */
+
+.form{
+    margin: 10rem 2rem;
+    background: $white;
+    max-width: 90%;
+
+    &__header{
+       margin-bottom: 2rem;
+       display: block;
+       position: relative;
+
+       h2{
+           font-size: 2.8rem;
+           line-height: 3.5rem;
+           font-weight: 400;
+       }
+       p{
+        padding: 1.4rem 0;
+        font-size: 1.6rem;
+        line-height: 2.6rem;
+        color: $silverlight;
+       }
+        &::after{
+            position: absolute;
+            content: '';
+            bottom: -2rem;
+            left: 0;
+            width:100%;
+            height: .2rem;
+            background: $orange;
+        }
+    }
+    &__body{
+        @include align(flex, center, center, null);        
+        display: block;            
+
+        background: $silverLight-40;
+        box-shadow: 0 2px 3px rgb(40 40 40 / 12%);
+        padding: 25px 30px;
+    }
+}

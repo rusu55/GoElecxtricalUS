@@ -1,0 +1,66 @@
+@use 'breakpoints' as *;
+
+@mixin position($position, $top, $left, $bottom, $right, $width, $height ) {
+    position: $position;
+    top: $top;
+    left: $left;
+    bottom: $bottom;
+    right: $right;
+    width: $width;
+    height: $height;      
+}
+
+@mixin align($display, $justify-content, $align-items, $height){
+    display: $display;
+    justify-content: $justify-content;
+    align-items: $align-items;
+    height: $height;
+}
+
+@mixin toggleSpans($background, $width, $height, $margin-top){
+    display: block;
+    background: $background;
+    width: $width;
+    height: $height;
+    margin-top: $margin-top;
+}
+
+@mixin control($height, $paddingy, $paddingx, $color) {
+       display: block;
+        width: 100%;
+        border-top: none;
+        border-right: 0px;
+        border-left: 0px;
+        border-bottom: 2px solid $color; 
+        background: transparent;
+        outline: none;
+        font-size: 1.6rem;
+        height: $height;
+        // border-radius: .4rem;       
+        // border: 1px solid $color;        
+        padding: $paddingy $paddingx;
+}
+
+
+@mixin responsive($breakpoint) {
+    @if $breakpoint == large{
+        @media (max-width: $lg){
+            @content;
+        }
+    }    
+    @if $breakpoint == medium {
+        @media (max-width: $md){
+            @content;
+        }
+    }
+    @if $breakpoint == small {
+        @media (max-width: $sm){
+           @content;
+        }
+    }
+    @if $breakpoint == xsmall {
+        @media (max-width: $xsm){
+           @content;
+        }
+    }
+}

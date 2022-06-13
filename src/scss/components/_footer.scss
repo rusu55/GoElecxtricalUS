@@ -1,0 +1,86 @@
+@use '../abstracts/' as *;
+.footer{
+    background: $footer;    
+    padding-top: 5rem;
+    &__items{       
+        justify-content: flex-start;        
+    }
+    h3{
+        font-size: 2rem;
+        font-weight: 400; 
+        color: $white;
+        width:30%;
+        margin-bottom: 3rem;            
+    }
+    p{
+        font-size: 1.4rem;
+        line-height: 2rem;
+        color:$silver;
+        width: 70%;
+    }
+
+    a{
+        font-size: 1.2rem;
+        line-height: 2rem;
+        color: $silver;
+        transition: color .3s;
+
+        &:hover{
+            color:$orange;
+        }
+    }
+
+    &__links{
+        flex-direction: column;        
+        align-items: center;       
+
+    }
+
+    &__services{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    &__contact{
+        width: 100%;
+        padding: 5rem 0;
+        background: $blackLight;  
+               
+        
+        .row{
+            justify-content: space-around;
+        }
+
+        
+        .icon {
+            color:$white;      
+                     
+        }
+
+        
+
+        .item{
+            align-items: center;
+        }
+
+        p{
+            width: 100%;           
+            margin-left: 4px;
+            &::before{
+                content: '';
+                width: 2px;
+                height: 3rem;
+                margin:0 4px;
+                background-color: $orange;
+                display: inline-block;
+                vertical-align: middle;
+            }
+        }
+    }
+
+    &__bottom{
+        @include align(flex, center, center, null);
+        text-align: center;
+        margin: 5rem 0;
+    }
+}

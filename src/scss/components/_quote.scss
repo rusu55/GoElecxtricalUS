@@ -1,0 +1,66 @@
+@use '../abstracts/' as *;
+.quote{
+      @include responsive(medium){
+        position: relative;
+        margin-top: 6rem !important;
+        width: 100%;
+      }
+      
+      position: absolute;
+      margin-top: -20rem !important;
+      z-index:100;
+      min-width: 38rem;
+      //max-width: 40%;
+      //margin-left: 8rem;
+      
+      &__header{
+        background: $orange;
+        height:11.8rem;    
+       
+        align-items: center;
+        justify-content: center;
+        .icon{
+          color: $white;
+          margin-right: 1rem;
+        }
+        
+        .desc p{
+          font-size: 1.4rem;
+          font-weight: 500;
+          color: $white;
+          margin-bottom: 1rem;
+        }
+
+        .desc h4{
+          font-size: 2.2rem;
+          font-weight: 500;
+          line-height: 3rem;
+          text-transform:capitalize;
+          color: $white;
+        }
+
+        .devider::before{
+          content: "";
+          width: 2px;
+          height: 2.6rem;
+          background-color: $white;
+          position: absolute;
+          top: 6rem;
+          transform: translateY(-50%);
+        }
+      }
+
+      &__body{
+        @include align(flex, center, center, null);
+        @include responsive(small){
+          width: 100%;
+        }
+        flex-direction: column;
+        display: block;
+        //max-width:60rem;
+        background: $silverLight-40;
+        box-shadow: 0 2px 3px rgb(40 40 40 / 12%);
+        //border-radius: 5px;
+        padding: 25px 30px;
+      }
+}

@@ -1,0 +1,189 @@
+@use '../abstracts/'as *;
+
+.nav .logo{    
+    width:30rem;
+    height: 7rem;
+    object-fit: cover;
+  @include responsive(medium){
+      position: fixed;     
+  }
+}
+/* Mobile Toogle menu */
+@include responsive(medium){   
+    .toggle-open{
+        @include position(fixed, 3rem, null, null, 3.5rem, null, null);
+        cursor: pointer;
+        z-index:3;
+        span:nth-child(1){
+          @include toggleSpans($main1, 3rem, .3rem, null);
+        }
+        span:nth-child(2){
+            @include toggleSpans($main1, 3rem, .3rem, .5rem);
+        }
+        span:nth-child(3){
+            @include toggleSpans($main1, 3rem, .3rem, .5rem);
+        }
+    }
+    .toggle-close{
+        @include position(fixed, 4rem, null, null, 3.8rem, null, null);
+        cursor: pointer;
+        z-index: 5;
+    
+        span:nth-child(1){
+            @include toggleSpans($main2, 3rem, 1.5px, .5rem);
+            transform: rotate(-45deg) translateY(.5rem);
+        }
+        span:nth-child(2){
+            display: none;
+        }
+        span:nth-child(3){
+            @include toggleSpans($main2, 3rem, 1.5px, .5rem);
+            transform: rotate(45deg) translateY(-.5rem);
+        }
+    }
+    
+    .toggle__background{
+        @include position(fixed, 1.5rem, null, null, 2.5rem, null, null);
+        background-color: rgba($white, 0.2);
+        height: 5rem;
+        width: 5rem;
+        border-radius: 50%;
+        z-index: 2;
+        box-shadow: 0 1rem 3rem rgba($black, 0.1);
+        cursor: pointer;
+    }
+
+  
+    
+    .navbar ul{
+        background: $white !important;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        @include position(fixed, 0, null, 0, 0, 100%, 100%);
+        padding-right: 0 !important;
+        z-index: 1;
+        transition: all .3s linear;
+        
+        li{
+            width: 100%;
+          }
+       a{
+           display:block;
+           width: 100%;
+           text-align: center;
+           padding: 1.5rem 0 !important;           
+           position: relative;
+           
+           .active{
+            background: $black;
+        }
+
+           &::before {
+            @include position(absolute, 0, 0, 0, 0, 100%, 100%);
+            content: "";
+            background: linear-gradient(to right, $main1, $main2);
+            z-index: -1;
+            transform: scale(0);
+            transition: all .3s linear;
+             }
+            &:hover::before{
+                    transform: scale(1);
+
+             }
+            &:hover{
+                color: $white !important;
+            }
+           
+       }
+
+       
+    }
+    .toggle__layer{
+        @include position(absolute, 0, 0, null, null, 100%, 100%);
+        background: rgba(0, 0, 0, .5); 
+        z-index: -1;   
+    }
+
+    .nav-close {
+        transform: translateX(100%);
+     }
+     .nav-open {
+        transform: translateX(0);
+     }     
+
+}
+
+.nav{
+    height: 7rem;
+    background: $white;
+    width: 100%;    
+    z-index: 100;
+    @include responsive(medium){
+        position: fixed;
+        z-index: 1;
+    }
+
+    .navbar{
+        @include align(flex, space-between, center, 7rem);         
+        .logo{
+            z-index: 99;
+        }
+        ul{
+            @include responsive(small){
+                padding-right: 5rem;
+                
+            }  
+            padding-right: 20rem;            
+            
+            a{                
+                position: relative;
+                margin: 0 1rem;
+                padding: .5rem 0;
+                font-size: 1.6rem;
+                font-weight: 700; 
+                color: $main2; 
+                border-bottom: 2px solid transparent;
+
+                &:before {
+                    @include position(absolute, .2rem, 0, 0, 0, 100%, 100%);
+                    content: "";
+                    border-bottom: 2px solid $main2;
+                   transform: scaleX(0);
+                    transition: all .3s linear;
+                }
+                &:hover:before{
+                    transform: scaleX(1);
+                }
+                
+                &:hover{
+                    color: black;
+                }
+            }
+
+        }
+    }
+
+}
+
+.nav.fixedNav{
+    top: 0;
+    left: 0;   
+    z-index:999;
+    transform: translateY(-6rem);
+    opacity: 0;
+}
+.nav.floatNav{
+       
+    z-index:999;
+    position: fixed;
+    top: 0;
+    left: 0;    
+    transform: translateY(0);
+    opacity: 1;
+    transition: all .7s linear;
+    -webkit-box-shadow: 0 .5rem 1rem rgb(0 0 0 / 0.2);
+    -moz-box-shadow: 0 .5rem 1rem rgb(0 0 0 / 0.2);
+     box-shadow: 0 .5rem 1rem rgb(0 0 0 / 0.2);
+    
+}

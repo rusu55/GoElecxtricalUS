@@ -1,0 +1,54 @@
+@use '../abstracts/' as *;
+
+.parallax{
+    
+    &__inner{
+        height:400px;
+        position: relative;
+        
+        &__title{
+            position: absolute;
+            top:50%;
+            left:50%;
+            transform: translate(-50%, -50%);
+            font-size: 5rem;
+            font-weight: 100;
+            text-shadow: 0 0 5px $black;
+            color: $white;
+            text-align: center;
+            z-index: 0;
+            text-transform: uppercase;
+
+            &::before{
+                content: "";
+                width: 70px;
+                height: 96px;
+                background-color: $orange;
+                position: absolute;
+                display: block;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+                margin-left: -35px;
+                text-align: center;
+                z-index: -1;
+               
+            }
+        }
+    }
+
+    .overlay{
+        height: 60rem;
+        background: linear-gradient(to bottom, $silverDark, $black);
+        width: 100%;
+        position: absolute;
+        top:0;
+        z-index: 0;
+        opacity: .2;
+    }
+}       
+
+       
+    
+
+    

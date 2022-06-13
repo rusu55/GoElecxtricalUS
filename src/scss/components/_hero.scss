@@ -1,0 +1,67 @@
+@use '../abstracts/' as *;
+
+.carousel{
+    @include position(relative, 0, 0, null, null, 100%, 500px);
+    overflow: hidden;   
+    
+  
+
+    &__inner{
+        white-space: nowrap;
+        transition: ease 1s;
+        
+      
+        &__item{
+            display: inline-block;
+            width: 100%;
+            height: 100%;           
+            transition: all 0.5s ease;
+
+            img {
+                   object-fit: cover;
+                   width: 100%;
+                   height: 500px;
+                  
+                }   
+        }      
+          .current{
+           opacity: 1;
+           transform: translateX(0);
+           
+        }
+    }
+}
+
+
+  
+  .content {
+    position: absolute;
+    top: 23rem;
+    left: 5rem;
+    opacity: 0;
+    width: 50%;
+    color: #fff;
+    padding: 3rem;
+    background: rgba(0, 0, 0, 0.3);
+    animation: slide-up 1s cubic-bezier(0, .9, .3, 1.2);
+    animation-delay: 1.5s;
+    animation-fill-mode: forwards;
+    visibility: hidden;
+  }
+
+  .current .content {
+    opacity: 1;
+    transform: translateX(0);
+    transition: all 0.5s ease;
+  }
+
+  @keyframes slide-up {
+    0% {
+      opacity: 0;     
+      top: 30rem;
+    }
+    100% {
+      visibility: visible;
+      top: 25rem;
+    }
+  }

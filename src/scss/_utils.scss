@@ -1,0 +1,123 @@
+@use './abstracts/' as *;
+
+.container{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    overflow: auto;
+    overflow-x: hidden;
+}
+
+.flex {
+    display:flex;
+}
+
+.strech{
+    align-items: stretch;
+}
+
+.center {
+    justify-content: center;
+    align-items: center;
+}
+
+ul{
+    list-style-type: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+.group {
+    margin-bottom: 1.3rem;
+    span {
+        font-size: 1.5rem;
+        display: inline-block;
+        color: $blackDark;
+        cursor: pointer;
+    }
+    p{
+        font-size: 1.3rem;
+        color: $main1;
+        margin-bottom: .5rem;
+    }
+    &__control{
+        @include control(5rem, 0, 1.5rem, $silverLight-50);
+
+        &:focus{
+            @include control(5rem, 0, 1.5rem, $orange);
+        }
+    }
+   
+    &__textarea {
+       @include control(10rem, 1.5rem, 1.5rem, $silverLight-45);
+      
+       &:focus{
+        @include control(5rem, 0, 1.5rem, $orange);
+    }
+    }
+         &::placeholder {
+            font-family: sans-serif;
+            font-size: 1.5rem;           
+        }
+       
+
+}
+
+.heading {
+    margin: 4rem 1rem;
+    font-size: 3.4rem;
+    font-weight: 400;
+    background: linear-gradient(to right,$black, $orange);
+    background-clip: text;
+    color: transparent;
+    //transform: rotate(-2deg);
+    text-transform: capitalize;
+    
+    &::after{
+        content: "";
+        width: 70px;
+        height: 96px;
+        border: 2px solid $orange;
+        position: absolute;
+        display: block;
+        margin-left: -20px;
+        text-align: center;  
+        bottom: 76px;          
+    }
+  
+}
+
+
+.mt-55 {
+    margin-bottom: 10rem!important;
+}
+.mt-5 {
+    margin-top: 5rem;
+}
+
+.ml-1 {
+    margin-left: 1rem;
+}
+.ml-3 {
+    margin-left: 3rem;
+}
+
+.ml-5{
+    margin-left: 5rem;
+}
+
+.p-15{
+    padding: 1.5rem;
+}
+
+.animation {
+    transform: translateY(-6rem) scale(0.5);
+    opacity: 0;
+    transition: all .4s ease-out;
+}
+.animate {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+}

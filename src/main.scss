@@ -1,0 +1,20 @@
+@use './scss/base';
+@use './scss/layout';
+@use './scss/utils';
+
+
+/* components */
+@use './scss/components/spinner';
+@use './scss/components/navBar';
+@use './scss/components/hero';
+@use './scss/components/intro';
+@use './scss/components/quote';
+@use './scss/components/footer';
+@use './scss/components/services';
+@use './scss/components/branding';
+@use './scss/components/skillsBar';
+@use './scss/components/parallax';
+@use './scss/components/about';
+@use './scss/components/contact';
+@use './scss/components/gallery';
+@use './scss/components/testimonials';

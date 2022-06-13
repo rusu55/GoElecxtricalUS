@@ -1,0 +1,11 @@
+@use '../abstracts/' as *;
+
+.loader{
+    @include position(fixed, 0, 0, null, null, 100%, 100%);
+    background: rgba(0, 0, 0, .6);
+    z-index:99;   
+}
+.spiner{   
+    @include align(flex, center,center, 100%);
+    z-index:100;
+}
