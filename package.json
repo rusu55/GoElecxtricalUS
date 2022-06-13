@@ -20,7 +20,7 @@
     "yup": "^0.32.11"
   },
   "scripts": {
-    "start": "set PORT=8080 && react-scripts start",
+    "start": "react-scripts start",
     "scss": "sass src/main.scss src/main.css --watch --no-source-map --style compressed",
     "dev": "concurrently \" npm start \" \" npm run scss  \"",
     "build": "CI= react-scripts build",
